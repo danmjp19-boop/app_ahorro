@@ -1410,7 +1410,7 @@ class _PaginaIngresosState extends State<PaginaIngresos> {
   }
 
   Future<void> _guardarIngresos() async {
-    final user = FirebaseAuth.instance.currentUser!;
+    final user = FirebaseAuth.instance.currentUser;
     await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
@@ -1592,7 +1592,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
   // =================== FIRESTORE: CATEGORÍAS ===================
 
   Future<void> _cargarCategorias() async {
-    final user = FirebaseAuth.instance.currentUser!;
+    final user = FirebaseAuth.instance.currentUser;
     final doc = await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
@@ -1616,7 +1616,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
   }
 
   Future<void> _guardarCategorias() async {
-    final user = FirebaseAuth.instance.currentUser!;
+    final user = FirebaseAuth.instance.currentUser;
     await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
@@ -1628,7 +1628,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
   // =================== GASTOS ===================
 
   Future<void> _cargarGastos() async {
-    final user = FirebaseAuth.instance.currentUser!;
+    final user = FirebaseAuth.instance.currentUser;
     final doc = await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
@@ -1646,7 +1646,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
   }
 
   Future<void> _guardarGastos() async {
-    final user = FirebaseAuth.instance.currentUser!;
+    final user = FirebaseAuth.instance.currentUser;
     await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
@@ -1656,7 +1656,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
   }
 
   Future<void> _cargarIngresosTotales() async {
-    final user = FirebaseAuth.instance.currentUser!;
+    final user = FirebaseAuth.instance.currentUser;
     final doc = await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
