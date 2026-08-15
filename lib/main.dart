@@ -13,7 +13,11 @@ import 'package:app_ahorro/firebase_options.dart';
 import 'package:flutter/services.dart';
 
 String uid() {
-  return FirebaseAuth.instance.currentUser!.uid;
+  final user = FirebaseAuth.instance.currentUser;
+  if (user == null) {
+    throw Exception('Usuario no autenticado');
+  }
+  return user.uid;
 }
 
 // =================== INICIALIZACIÓN DE FIREBASE ===================
