@@ -1389,7 +1389,10 @@ class _PaginaIngresosState extends State<PaginaIngresos> {
   }
 
   Future<void> _cargarIngresos() async {
-    final user = FirebaseAuth.instance.currentUser!;
+    final user = FirebaseAuth.instance.currentUser;
+
+    if (user == null) return;
+
     final doc = await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
