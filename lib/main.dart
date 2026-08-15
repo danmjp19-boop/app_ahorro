@@ -131,7 +131,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
       PaginaMetas(refrescarAnalisis: _refrescarAnalisis),
 
       /// 👇 AGREGA ESTA LÍNEA AQUÍ
-      PaginaAhorroColaborativo(boteId: "default"),
+      // PaginaAhorroColaborativo(boteId: "default"),
 
       PaginaMotivacion(),
     ];
