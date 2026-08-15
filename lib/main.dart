@@ -21,14 +21,31 @@ String uid() {
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Evita inicializar Firebase dos veces
-  if (Firebase.apps.isEmpty) {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
+  try {
+    if (Firebase.apps.isEmpty) {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+    }
+
+    runApp(const AhorroApp());
+  } catch (e) {
+    runApp(
+      MaterialApp(
+        home: Scaffold(
+          body: Center(
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Text(
+                'Error al iniciar la aplicación:\n\n$e',
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
-
-  runApp(const AhorroApp());
 }
 
 // =================== APP PRINCIPAL ===================
