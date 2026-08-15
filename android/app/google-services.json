@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "810033168473",
+    "project_id": "soluciones-al-instante",
+    "storage_bucket": "soluciones-al-instante.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810033168473:android:a988344e717e5d320f3148",
+        "android_client_info": {
+          "package_name": "com.example.app_ahorro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQnLii7S9p1ltKQmUjHBx7iEGHF3aofZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
