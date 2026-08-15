@@ -33,7 +33,7 @@ Future<void> main() async {
     }
 
     runApp(const AhorroApp());
-  } catch (e) {
+  } catch (e, stackTrace) {
     runApp(
       MaterialApp(
         home: Scaffold(
@@ -41,7 +41,7 @@ Future<void> main() async {
             child: Padding(
               padding: EdgeInsets.all(20),
               child: Text(
-                'Error al iniciar la aplicación:\n\n$e',
+                'Error al iniciar la aplicación:\n\n$e\n\n$stackTrace',
                 textAlign: TextAlign.center,
               ),
             ),
