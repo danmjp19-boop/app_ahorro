@@ -1395,7 +1395,7 @@ class _PaginaIngresosState extends State<PaginaIngresos> {
 
     final doc = await FirebaseFirestore.instance
         .collection('usuarios')
-        .doc(user.uid)
+        .doc(user!.uid)
         .collection('ingresos')
         .doc('data')
         .get();
@@ -1413,7 +1413,7 @@ class _PaginaIngresosState extends State<PaginaIngresos> {
     final user = FirebaseAuth.instance.currentUser;
     await FirebaseFirestore.instance
         .collection('usuarios')
-        .doc(user.uid)
+        .doc(user!.uid)
         .collection('ingresos')
         .doc('data')
         .set({'items': _ingresos});
@@ -1595,7 +1595,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
     final user = FirebaseAuth.instance.currentUser;
     final doc = await FirebaseFirestore.instance
         .collection('usuarios')
-        .doc(user.uid)
+        .doc(user!.uid)
         .collection('categorias')
         .doc('data')
         .get();
@@ -1608,7 +1608,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
     } else {
       await FirebaseFirestore.instance
           .collection('usuarios')
-          .doc(user.uid)
+          .doc(user!.uid)
           .collection('categorias')
           .doc('data')
           .set({'items': _categorias});
@@ -1619,7 +1619,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
     final user = FirebaseAuth.instance.currentUser;
     await FirebaseFirestore.instance
         .collection('usuarios')
-        .doc(user.uid)
+        .doc(user!.uid)
         .collection('categorias')
         .doc('data')
         .set({'items': _categorias});
@@ -1631,7 +1631,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
     final user = FirebaseAuth.instance.currentUser;
     final doc = await FirebaseFirestore.instance
         .collection('usuarios')
-        .doc(user.uid)
+        .doc(user!.uid)
         .collection('gastos')
         .doc('data')
         .get();
@@ -1649,7 +1649,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
     final user = FirebaseAuth.instance.currentUser;
     await FirebaseFirestore.instance
         .collection('usuarios')
-        .doc(user.uid)
+        .doc(user!.uid)
         .collection('gastos')
         .doc('data')
         .set({'items': _gastos});
@@ -1659,7 +1659,7 @@ class _PaginaGastosState extends State<PaginaGastos> {
     final user = FirebaseAuth.instance.currentUser;
     final doc = await FirebaseFirestore.instance
         .collection('usuarios')
-        .doc(user.uid)
+        .doc(user!.uid)
         .collection('ingresos')
         .doc('data')
         .get();
