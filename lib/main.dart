@@ -263,7 +263,10 @@ class _PaginaAhorroColaborativoState extends State<PaginaAhorroColaborativo> {
   }
 
   // UTIL: id del usuario actual (llama a la función uid() que ya tienes)
-  String get _uid => FirebaseAuth.instance.currentUser!.uid;
+  String get _uid {
+  final user = FirebaseAuth.instance.currentUser;
+  return user?.uid ?? '';
+}
 
   // ------------------ NUEVO: Gestión de códigos y solicitudes ------------------
 
