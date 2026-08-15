@@ -1389,11 +1389,8 @@ class _PaginaIngresosState extends State<PaginaIngresos> {
   }
 
   Future<void> _cargarIngresos() async {
-  final user = FirebaseAuth.instance.currentUser;
-
-  if (user == null) return;
-
-  final doc = await FirebaseFirestore.instance
+    final user = FirebaseAuth.instance.currentUser!;
+    final doc = await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
         .collection('ingresos')
@@ -1409,12 +1406,9 @@ class _PaginaIngresosState extends State<PaginaIngresos> {
     }
   }
 
-  Future<void> _cargarIngresos() async {
-  final user = FirebaseAuth.instance.currentUser;
-
-  if (user == null) return;
-
-  final doc = await FirebaseFirestore.instance
+  Future<void> _guardarIngresos() async {
+    final user = FirebaseAuth.instance.currentUser!;
+    await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
         .collection('ingresos')
@@ -1594,12 +1588,9 @@ class _PaginaGastosState extends State<PaginaGastos> {
 
   // =================== FIRESTORE: CATEGORÍAS ===================
 
-  Future<void> _cargarIngresos() async {
-  final user = FirebaseAuth.instance.currentUser;
-
-  if (user == null) return;
-
-  final doc = await FirebaseFirestore.instance
+  Future<void> _cargarCategorias() async {
+    final user = FirebaseAuth.instance.currentUser!;
+    final doc = await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
         .collection('categorias')
@@ -1621,12 +1612,9 @@ class _PaginaGastosState extends State<PaginaGastos> {
     }
   }
 
-  Future<void> _cargarIngresos() async {
-  final user = FirebaseAuth.instance.currentUser;
-
-  if (user == null) return;
-
-  final doc = await FirebaseFirestore.instance
+  Future<void> _guardarCategorias() async {
+    final user = FirebaseAuth.instance.currentUser!;
+    await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
         .collection('categorias')
@@ -1636,12 +1624,9 @@ class _PaginaGastosState extends State<PaginaGastos> {
 
   // =================== GASTOS ===================
 
-  Future<void> _cargarIngresos() async {
-  final user = FirebaseAuth.instance.currentUser;
-
-  if (user == null) return;
-
-  final doc = await FirebaseFirestore.instance
+  Future<void> _cargarGastos() async {
+    final user = FirebaseAuth.instance.currentUser!;
+    final doc = await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
         .collection('gastos')
@@ -1657,12 +1642,9 @@ class _PaginaGastosState extends State<PaginaGastos> {
     }
   }
 
-  Future<void> _cargarIngresos() async {
-  final user = FirebaseAuth.instance.currentUser;
-
-  if (user == null) return;
-
-  final doc = await FirebaseFirestore.instance
+  Future<void> _guardarGastos() async {
+    final user = FirebaseAuth.instance.currentUser!;
+    await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
         .collection('gastos')
@@ -1670,12 +1652,9 @@ class _PaginaGastosState extends State<PaginaGastos> {
         .set({'items': _gastos});
   }
 
-  Future<void> _cargarIngresos() async {
-  final user = FirebaseAuth.instance.currentUser;
-
-  if (user == null) return;
-
-  final doc = await FirebaseFirestore.instance
+  Future<void> _cargarIngresosTotales() async {
+    final user = FirebaseAuth.instance.currentUser!;
+    final doc = await FirebaseFirestore.instance
         .collection('usuarios')
         .doc(user.uid)
         .collection('ingresos')
