@@ -32,6 +32,9 @@ Future<void> main() async {
       );
     }
 
+    // Esperar a que Firebase termine de recuperar la sesión
+    await FirebaseAuth.instance.authStateChanges().first;
+
     runApp(const AhorroApp());
   } catch (e, stackTrace) {
     runApp(
@@ -39,7 +42,7 @@ Future<void> main() async {
         home: Scaffold(
           body: Center(
             child: Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Text(
                 'Error al iniciar la aplicación:\n\n$e\n\n$stackTrace',
                 textAlign: TextAlign.center,
